@@ -48,3 +48,8 @@ npm run develop
 The last command `npm run develop` will build and run a local version of the editor on port 3000. Changes to the source are detected and the editor is automatically rebuilt.
 
 To access the local editor instance, open a browser tab and navigate to `http://localhost:3000`.
+
+## 本地调试
+安装 http-server，用于取代 devDependencies 里的 server，此server会去掉 console localStorage 这些
+scripts 里增加 "start": "concurrently --kill-others \"npm run watch\" \"http-server -c-1 dist\"",  # 用 concurrently 同步启动 watch 和 http-server，否则会互相干扰
+启动：npm run start
