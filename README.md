@@ -53,3 +53,4 @@ To access the local editor instance, open a browser tab and navigate to `http://
 安装 http-server，用于取代 devDependencies 里的 server，此server会去掉 console localStorage 这些
 scripts 里增加 "start": "concurrently --kill-others \"npm run watch\" \"http-server -c-1 dist\"",  # 用 concurrently 同步启动 watch 和 http-server，否则会互相干扰
 启动：npm run start
+用非 127.0.0.1 的 IP 访问，否则会有不更新的问题
